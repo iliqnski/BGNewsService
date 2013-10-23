@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="db0a5611-d576-40e6-a5e5-52722e4e9ca9" Publisher="CN=iliqnski" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>BGNewsService</DisplayName>
+    <PublisherDisplayName>iliqnski</PublisherDisplayName>
+    <Logo>Assets\store-logo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="BGNewsService.App">
+      <VisualElements DisplayName="BGNewsService" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="BGNewsService" ForegroundText="light" BackgroundColor="#2E1700" ToastCapable="true">
+        <LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\BadgeLogo.png" />
+        <DefaultTile WideLogo="Assets\wide-logo-scale.png" ShowName="allLogos" />
+        <SplashScreen Image="Assets\splash-screen.png" BackgroundColor="#2E1700" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+        <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.NewsFeedBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
